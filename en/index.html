@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trading Guru — trading journal & trader's diary: discipline, risk, mistake review</title>
+<meta name="description" content="Discipline beats the entry point. Trading Guru is a trading journal and trader's diary: import from Binance, Bybit, OKX, BitGet and MetaTrader, mistakes measured in money, risk calculator, trading-system wizard, bar-by-bar simulator and a mentor cabinet. 7 days free.">
+<link rel="canonical" href="https://dimidrol987-hash.github.io/trading-guru-site/en/">
+<link rel="alternate" hreflang="ru" href="https://dimidrol987-hash.github.io/trading-guru-site/">
+<link rel="alternate" hreflang="en" href="https://dimidrol987-hash.github.io/trading-guru-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://dimidrol987-hash.github.io/trading-guru-site/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://dimidrol987-hash.github.io/trading-guru-site/en/">
+<meta property="og:title" content="Trading Guru — discipline beats the entry point">
+<meta property="og:description" content="The trading journal that shows what every broken rule costs you. Risk before the entry, an honest review after it, a system and a simulator. 7 days free.">
+<meta property="og:image" content="https://dimidrol987-hash.github.io/trading-guru-site/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#080C14">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trading Guru","applicationCategory":"FinanceApplication","operatingSystem":"Windows 10, Windows 11","inLanguage":"en","url":"https://dimidrol987-hash.github.io/trading-guru-site/en/","description":"Trading journal and trader's diary: discipline, risk management, mistake review, trading-system wizard, simulator and mentor cabinet.","offers":[ {"@type":"Offer","name":"6 months","price":"59","priceCurrency":"USDT"},{"@type":"Offer","name":"1 year","price":"99","priceCurrency":"USDT"} ]}</script>
+<link rel="icon" type="image/png" href="../img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#080C14; --ink-2:#0C121D; --surface:#111A28; --surface-2:#0D1522; --surface-3:#162234; --line:#1E2B3D; --line-2:#2A3A50;
+  --text:#ECEEF2; --muted:#8D97A8; --faint:#5D6979;
+  --gold:#D9A441; --gold-bright:#F3CA70; --gold-deep:#B8862C; --gold-soft:rgba(217,164,65,.09); --gold-line:rgba(217,164,65,.34);
+  --profit:#4FB286; --loss:#D9685F; --amber:#E0A54B;
+  --shadow:0 40px 100px rgba(0,0,0,.55);
+  --maxw:2240px; --gut:clamp(20px,4.2vw,84px);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono","SF Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  --ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{width:min(var(--maxw),100% - var(--gut)*2);margin-inline:auto}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.015em;text-wrap:balance;margin:0}
+p{text-wrap:pretty}
+::selection{background:rgba(217,164,65,.35);color:#fff}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.gold{background:linear-gradient(180deg,var(--gold-bright),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.eyebrow .no{color:var(--faint)}
+.center .eyebrow::after{content:"";width:30px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px/1 var(--sans);border-radius:14px;padding:18px 28px;cursor:pointer;border:1px solid transparent;transition:transform .2s var(--ease),box-shadow .3s,background .25s,border-color .25s,color .25s;white-space:nowrap;overflow:hidden}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn small{font:500 11.5px/1 var(--mono);opacity:.72;letter-spacing:.02em}
+.btn-gold{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#1A1204;box-shadow:0 14px 40px rgba(217,164,65,.28),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn-gold:hover::after{transform:translateX(120%)}
+.btn-gold:hover{box-shadow:0 20px 56px rgba(217,164,65,.42),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-ghost{background:rgba(255,255,255,.025);border-color:var(--line-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);background:var(--gold-soft)}
+.btn-sm{padding:12px 18px;font-size:14px;border-radius:12px}
+
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,backdrop-filter .35s}
+.nav.solid{background:rgba(8,12,20,.78);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;gap:28px;height:78px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brand img{width:40px;height:40px;border-radius:11px;box-shadow:0 6px 20px rgba(0,0,0,.4)}
+.wordmark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.06em;white-space:nowrap}
+.wordmark span{color:var(--gold)}
+.links{display:flex;gap:30px;font-size:14.5px;margin-left:auto}
+.links a{color:var(--muted);transition:color .2s;position:relative}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s var(--ease)}
+.links a:hover{color:var(--text)}.links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;align-items:center;gap:14px;flex:none}
+.lang{display:inline-flex;border:1px solid var(--line-2);border-radius:100px;padding:3px;background:rgba(255,255,255,.02)}
+.lang a{font:600 12px/1 var(--mono);letter-spacing:.08em;padding:8px 11px;border-radius:100px;color:var(--muted);transition:color .2s,background .2s}
+.lang a.on{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#1A1204}
+.lang a:not(.on):hover{color:var(--text)}
+@media (max-width:1180px){.links{display:none}.nav-right{margin-left:auto}}
+@media (max-width:560px){.nav .btn{display:none}.wordmark{font-size:16px}.brand img{width:34px;height:34px}}
+.lang-bar{position:absolute;top:78px;left:0;right:0;z-index:55;display:flex;justify-content:center;pointer-events:none}
+.lang-bar div{pointer-events:auto;margin-top:10px;display:flex;align-items:center;gap:12px;background:rgba(17,26,40,.95);border:1px solid var(--gold-line);border-radius:100px;padding:8px 8px 8px 18px;font-size:14px;box-shadow:0 12px 40px rgba(0,0,0,.45)}
+.lang-bar a{color:var(--gold-bright);font-weight:600}
+.lang-bar button{border:0;background:transparent;color:var(--muted);font-size:16px;cursor:pointer;width:30px;height:30px;border-radius:50%}
+.lang-bar[hidden]{display:none}
+
+
+.hero{position:relative;min-height:max(760px,100svh);display:flex;flex-direction:column;overflow:hidden;
+  background:radial-gradient(55% 70% at 78% 18%,rgba(217,164,65,.16),transparent 62%),radial-gradient(45% 60% at 0% 0%,rgba(79,178,134,.07),transparent 60%)}
+#chart{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.42}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,12,20,.7) 0%,rgba(8,12,20,.35) 35%,rgba(8,12,20,.8) 78%,var(--ink) 100%)}
+.hero-grid{position:absolute;inset:0;z-index:1;opacity:.35;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:72px 72px;-webkit-mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 40%,#000,transparent)}
+.hero-in{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(40px,5vw,110px);align-items:center;padding:clamp(130px,16vh,190px) 0 70px}
+@media (max-width:1180px){.hero-in{grid-template-columns:minmax(0,1fr);text-align:center;padding-top:140px}.hero-text{margin:0 auto}.hero .cta-row,.hero .under{justify-content:center}}
+.hero-text{max-width:760px}
+.pill{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;background:rgba(17,26,40,.75);border:1px solid var(--gold-line);border-radius:100px;padding:6px 16px 6px 6px;backdrop-filter:blur(8px)}
+.pill .tag{font:600 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#1A1204;background:linear-gradient(180deg,var(--gold-bright),var(--gold));border-radius:100px;padding:6px 11px}
+.pill b{font-weight:600;color:var(--gold-bright)}
+h1.title{font-size:clamp(36px,4vw,86px);line-height:1.02;margin:30px 0 0;letter-spacing:-.025em}
+.sub{font-size:clamp(17px,1.25vw,21px);color:var(--muted);max-width:62ch;margin:28px 0 0;line-height:1.7}
+@media (max-width:1180px){.sub{margin-inline:auto}}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
+.under{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:22px;font-size:13.5px;color:var(--faint)}
+.under span::before{content:"✓";color:var(--profit);margin-right:8px;font-weight:700}
+.hero-shot{position:relative;perspective:1800px}
+.hero-shot .frame{transform:rotateY(-11deg) rotateX(5deg) scale(.97);transform-origin:40% 50%;transition:transform 1.4s var(--ease)}
+.hero-shot.in .frame{transform:rotateY(-6deg) rotateX(2deg) scale(1)}
+.hero-shot::before{content:"";position:absolute;inset:6% 4% -6% 8%;background:radial-gradient(closest-side,rgba(217,164,65,.32),transparent);filter:blur(50px);z-index:-1}
+@media (max-width:1180px){.hero-shot{max-width:980px;margin:10px auto 0}.hero-shot .frame,.hero-shot.in .frame{transform:none}}
+.float{position:absolute;z-index:3;background:rgba(17,26,40,.9);backdrop-filter:blur(12px);border:1px solid var(--line-2);border-radius:16px;padding:13px 17px;box-shadow:0 22px 60px rgba(0,0,0,.55);font-size:13px;line-height:1.4;animation:bob 7s ease-in-out infinite;text-align:left}
+.float b{display:block;font:600 19px/1.3 var(--mono)}
+.float span{color:var(--muted)}
+.float.f1{left:-34px;top:14%}
+.float.f2{right:-22px;bottom:16%;animation-delay:-3.5s}
+.float.f3{left:12%;bottom:-26px;animation-delay:-1.7s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media (max-width:1400px){.float.f3{display:none}}
+@media (max-width:760px){.float{display:none}}
+.scroll-cue{position:absolute;left:50%;bottom:22px;z-index:3;transform:translateX(-50%);width:26px;height:42px;border:1px solid var(--line-2);border-radius:14px}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:9px;width:3px;height:8px;border-radius:2px;background:var(--gold);transform:translateX(-50%);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+@media (max-width:1180px){.scroll-cue{display:none}}
+
+
+.frame{position:relative;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;background:var(--ink-2);box-shadow:var(--shadow)}
+.frame .bar{display:flex;align-items:center;gap:7px;padding:12px 15px;background:linear-gradient(180deg,#152031,#111A28);border-bottom:1px solid var(--line)}
+.frame .bar i{width:11px;height:11px;border-radius:50%}
+.frame .bar i:nth-child(1){background:#D9685F;opacity:.75}.frame .bar i:nth-child(2){background:#E0A54B;opacity:.75}.frame .bar i:nth-child(3){background:#4FB286;opacity:.75}
+.frame .bar span{margin-left:10px;font:500 11.5px/1 var(--mono);color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame img{display:block;width:100%;height:auto;cursor:zoom-in}
+.frame::after{content:"";position:absolute;inset:0;border-radius:18px;pointer-events:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+
+
+.marquee{position:relative;z-index:2;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);overflow:hidden}
+.marquee-track{display:flex;gap:56px;width:max-content;padding:20px 0;animation:mq 46s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{display:inline-flex;align-items:center;gap:56px;font:600 14px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.marquee span::after{content:"◆";color:var(--gold);font-size:9px}
+.marquee em{font-style:normal;color:var(--faint);letter-spacing:.24em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.stat{padding:38px clamp(18px,2.2vw,40px);border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .n{font:700 clamp(26px,2vw,38px)/1.1 var(--serif);letter-spacing:-.01em}
+.stat .l{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5}
+@media (max-width:1100px){.stats{grid-template-columns:repeat(2,1fr)}.stat{border-bottom:1px solid var(--line)}.stat:nth-child(2n){border-right:0}.stat:last-child{grid-column:span 2;border-bottom:0}}
+
+
+section{position:relative;padding:clamp(90px,10vw,170px) 0}
+.alt{background:linear-gradient(180deg,var(--surface-2),var(--ink-2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:1000px;margin-bottom:clamp(50px,5vw,80px)}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(28px,2.5vw,50px);line-height:1.1;margin:22px 0 0;letter-spacing:-.02em}
+.sec-head h2 em{font-style:normal}
+.sec-head p{color:var(--muted);font-size:clamp(16.5px,1.1vw,19px);margin:24px 0 0;line-height:1.7}
+.sec-head.center p{margin-inline:auto;max-width:760px}
+
+
+.bigquote{padding:clamp(80px,9vw,150px) 0;text-align:center;position:relative;overflow:hidden}
+.bigquote::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 50%,rgba(217,164,65,.07),transparent 70%)}
+.bigquote blockquote{position:relative;margin:0 auto;max-width:1100px;font:italic 600 clamp(24px,2.3vw,42px)/1.3 var(--serif);letter-spacing:-.01em}
+.bigquote blockquote::before{content:"“";display:block;font:700 clamp(70px,6vw,110px)/.6 var(--serif);color:var(--gold);opacity:.55;margin-bottom:20px;font-style:normal}
+.bigquote cite{display:block;margin-top:30px;font:500 13px/1.5 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal}
+.bigquote cite span{display:block;color:var(--faint);letter-spacing:.12em;margin-top:6px;text-transform:none;font-size:13px}
+
+
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:980px){.pains{grid-template-columns:1fr}}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .3s,transform .35s var(--ease)}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(217,164,65,.10),transparent 60%)}
+.card:hover::before{opacity:1}
+.card:hover{border-color:var(--gold-line);transform:translateY(-4px)}
+.pain{padding:36px 34px}
+.pain::after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--loss),transparent)}
+.pain .q{font:600 clamp(19px,1.3vw,23px)/1.35 var(--serif);margin:0 0 16px}
+.pain p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.65}
+.pain p b{color:var(--text);font-weight:600}
+.bridge{margin:60px auto 0;text-align:center;max-width:1000px;font:600 clamp(21px,1.7vw,30px)/1.42 var(--serif)}
+.bridge em{font-style:normal;color:var(--gold-bright)}
+
+
+.path{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;position:relative}
+.path::before{content:"";position:absolute;left:9%;right:9%;top:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-line) 12%,var(--gold-line) 88%,transparent)}
+@media (max-width:1100px){.path{grid-template-columns:1fr 1fr}.path::before{display:none}}
+@media (max-width:620px){.path{grid-template-columns:1fr}}
+.st{text-align:center;padding:0 8px}
+.st .ic{width:80px;height:80px;margin:0 auto;border-radius:24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#1A2638,#111A28);border:1px solid var(--gold-line);box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 0 8px var(--surface-2);color:var(--gold-bright);position:relative;z-index:1}
+.st .ic svg{width:32px;height:32px}
+.st .k{font:500 11.5px/1 var(--mono);letter-spacing:.16em;color:var(--gold);margin-top:22px}
+.st h3{font-size:20px;margin:10px 0 10px}
+.st p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.st a{display:inline-block;margin-top:14px;font-size:14px;color:var(--gold);border-bottom:1px solid var(--gold-line)}
+
+
+.day{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:dd}
+@media (max-width:1200px){.day{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.day{grid-template-columns:1fr}}
+.dd{padding:30px 28px 32px}
+.dd .t{display:flex;align-items:center;gap:12px;font:600 13px/1 var(--mono);letter-spacing:.12em;color:var(--gold)}
+.dd .t i{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(217,164,65,.15)}
+.dd h3{font-size:20px;margin:18px 0 10px}
+.dd p{margin:0;color:var(--muted);font-size:15px;line-height:1.62}
+.dd ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dd li{font-size:14px;color:var(--text);padding-left:18px;position:relative;line-height:1.5}
+.dd li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:2px;background:var(--gold)}
+
+
+.row{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:clamp(40px,5.5vw,120px);align-items:start;margin-top:clamp(100px,10vw,170px)}
+.row.first{margin-top:0}
+.row.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr)}
+.row.flip .media{order:2}
+@media (max-width:1000px){.row,.row.flip{grid-template-columns:1fr;gap:34px;margin-top:90px}.row.flip .media{order:0}}
+.media{position:relative}
+.media .frame+.frame{margin-top:-90px;margin-left:30%;width:70%;z-index:2}
+.media .frame img{max-height:min(74vh,780px);object-fit:cover;object-position:top center}
+@media (min-width:1001px){.txt{position:sticky;top:120px;padding-top:30px}}
+.txt .k{display:flex;align-items:center;gap:12px;font:500 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.txt .k .new{font-size:10.5px;letter-spacing:.1em;color:#1A1204;background:var(--gold);border-radius:100px;padding:4px 10px}
+.txt h3{font-size:clamp(26px,2vw,40px);line-height:1.12;margin:18px 0 20px;letter-spacing:-.015em}
+.txt p{color:var(--muted);font-size:clamp(16.5px,1.15vw,18.5px);line-height:1.7;margin:0 0 24px}
+.txt ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.txt li{position:relative;padding-left:34px;font-size:16px;line-height:1.55}
+.txt li::before{content:"";position:absolute;left:0;top:2px;width:21px;height:21px;border-radius:7px;background:var(--gold-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F3CA70' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat;border:1px solid var(--gold-line)}
+.txt li b{color:var(--text)}
+.txt li span{color:var(--muted)}
+.quote-in{margin-top:26px;padding:18px 22px;border-left:2px solid var(--gold);background:var(--gold-soft);border-radius:0 14px 14px 0;font:italic 500 19px/1.5 var(--serif)}
+.demo-note{text-align:center;color:var(--faint);font-size:13px;margin-top:80px}
+
+
+.wisdom{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:1100px){.wisdom{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.wisdom{grid-template-columns:1fr}}
+.wis{padding:40px 36px 34px;display:flex;flex-direction:column}
+.wis::after{content:"“";position:absolute;right:24px;top:-6px;font:700 130px/1 var(--serif);color:var(--gold);opacity:.10}
+.wis blockquote{margin:0;font:italic 500 clamp(18px,1.2vw,21px)/1.5 var(--serif);flex:1}
+.wis .who{display:flex;align-items:center;gap:14px;margin-top:26px}
+.wis .av{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font:700 16px/1 var(--serif);color:#1A1204;background:linear-gradient(180deg,var(--gold-bright),var(--gold-deep))}
+.wis .who b{display:block;font-size:15.5px}
+.wis .who span{font-size:13px;color:var(--muted)}
+.wis .tg{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);line-height:1.55}
+.wis .tg b{color:var(--gold-bright);font-weight:600}
+
+
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1200px){.who-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.who-grid{grid-template-columns:1fr}}
+.who-c{padding:36px 32px 34px;display:flex;flex-direction:column}
+.who-c .ic{width:56px;height:56px;border-radius:17px;display:flex;align-items:center;justify-content:center;color:var(--gold-bright);background:var(--gold-soft);border:1px solid var(--gold-line)}
+.who-c .ic svg{width:26px;height:26px}
+.who-c h3{font-size:21px;margin:24px 0 10px}
+.who-c .pain2{font-size:15px;color:var(--muted);line-height:1.6;margin:0 0 18px}
+.who-c ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+.who-c li{font-size:14.5px;line-height:1.5;padding-left:24px;position:relative}
+.who-c li::before{content:"→";position:absolute;left:0;color:var(--gold)}
+.who-c .res{margin-top:22px;padding:14px 16px;border-radius:14px;background:rgba(79,178,134,.08);border:1px solid rgba(79,178,134,.25);font-size:14px;line-height:1.5}
+.who-c .res b{color:var(--profit)}
+
+
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.tile{padding:30px}
+.tile .no{font:500 11.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.tile h3{font-size:21px;margin:12px 0 10px}
+.tile p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+.tile img{display:block;margin:22px -30px -30px;width:calc(100% + 60px);max-width:none;border-top:1px solid var(--line);cursor:zoom-in;object-fit:cover;object-position:top center}
+.t-a{grid-column:span 6}.t-b{grid-column:span 6}
+.t-a img,.t-b img{height:420px}
+.t-c,.t-d,.t-e,.t-h,.t-i,.t-j{grid-column:span 4}
+.t-f{grid-column:span 7}.t-g{grid-column:span 5}
+.t-f img{height:260px}
+@media (max-width:1100px){.bento{grid-template-columns:repeat(2,1fr)}.bento>.tile{grid-column:span 2}.t-c,.t-d,.t-e,.t-h,.t-i,.t-j{grid-column:span 1}}
+@media (max-width:640px){.t-c,.t-d,.t-e,.t-h,.t-i,.t-j{grid-column:span 2}.t-a img,.t-b img{height:300px}}
+.bubbles{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:22px}
+.bubbles span{font-size:14px;background:#182740;border:1px solid var(--line-2);border-radius:16px 16px 16px 4px;padding:9px 14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:40px}
+.chips span{font-size:14px;background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:10px 18px;transition:border-color .2s,color .2s}
+.chips span:hover{border-color:var(--gold-line);color:var(--gold-bright)}
+
+
+.mentor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(36px,5vw,90px);align-items:center;background:linear-gradient(135deg,rgba(217,164,65,.11),rgba(17,26,40,.65) 55%);border:1px solid var(--gold-line);border-radius:30px;padding:clamp(32px,5vw,80px);position:relative;overflow:hidden}
+.mentor::after{content:"";position:absolute;right:-10%;top:-30%;width:60%;height:120%;background:radial-gradient(closest-side,rgba(217,164,65,.12),transparent);pointer-events:none}
+@media (max-width:1000px){.mentor{grid-template-columns:1fr}}
+.mentor h2{font-size:clamp(28px,2.5vw,46px);line-height:1.12;margin:18px 0 18px}
+.mentor p{color:var(--muted);font-size:17.5px;margin:0 0 28px;line-height:1.7}
+.mlist{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:relative;z-index:1}
+@media (max-width:600px){.mlist{grid-template-columns:1fr}}
+.mi{background:rgba(8,12,20,.55);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.mi b{display:block;font-size:15.5px;margin-bottom:5px}
+.mi span{font-size:14px;color:var(--muted);line-height:1.55}
+.m-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.m-how{font-size:14.5px!important;margin:0!important}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media (max-width:980px){.steps{grid-template-columns:1fr}}
+.step{padding:34px 32px}
+.step .k{font:700 40px/1 var(--serif);color:var(--gold);opacity:.9}
+.step h3{font-size:20px;margin:16px 0 10px}
+.step p{color:var(--muted);font-size:15.5px;margin:0;line-height:1.62}
+.m-steps{margin-top:40px}
+
+
+.cmp{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--surface)}
+.cmp-row{display:grid;grid-template-columns:1.25fr 1.2fr 1fr 1fr;border-top:1px solid var(--line)}
+.cmp-row:first-child{border-top:0}
+.cmp-row>div{padding:18px 24px;font-size:15px;display:flex;align-items:center;gap:10px;line-height:1.45}
+.cmp-row>div:first-child{color:var(--muted)}
+.cmp-head>div{font-weight:600;font-size:15.5px;padding:24px}
+.cmp-head>div:first-child{color:var(--faint);font:500 12.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.cmp .us{background:linear-gradient(180deg,rgba(217,164,65,.10),rgba(217,164,65,.04));border-inline:1px solid var(--gold-line)}
+.cmp-head .us{color:var(--gold-bright);font:700 20px/1 var(--serif)}
+.cy{color:var(--profit);font-weight:700}.cn{color:var(--loss);font-weight:700}.cp{color:var(--amber);font-weight:700}
+@media (max-width:900px){.cmp{overflow-x:auto}.cmp-row{min-width:780px}}
+.cmp-note{font-size:13px;color:var(--faint);margin-top:16px;text-align:center}
+
+
+.seg-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;margin:-20px 0 50px}
+.seg{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border:1px solid var(--line);border-radius:100px;padding:5px}
+.seg button{position:relative;z-index:1;appearance:none;border:0;background:transparent;color:var(--muted);font:600 15px/1 var(--sans);padding:14px 28px;border-radius:100px;cursor:pointer;transition:color .3s;white-space:nowrap}
+.seg button.on{color:#1A1204}
+.seg-glider{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:100px;background:linear-gradient(180deg,var(--gold-bright),var(--gold));box-shadow:0 8px 26px rgba(217,164,65,.3);transition:transform .4s var(--ease)}
+.seg[data-on="mentor"] .seg-glider{transform:translateX(100%)}
+.seg-note{font-size:15px;color:var(--muted);text-align:center;max-width:620px}
+@media (max-width:560px){.seg button{padding:12px 16px;font-size:14px}.seg-x{display:none}}
+.pt[hidden]{display:none}
+.pt.show{animation:ptIn .5s var(--ease)}
+@keyframes ptIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.t-free{display:flex;align-items:center;justify-content:center;gap:10px 18px;flex-wrap:wrap;max-width:820px;margin:0 auto 40px;padding:15px 22px;border-radius:16px;border:1px dashed var(--gold-line);background:var(--gold-soft);font-size:15.5px;text-align:center}
+.t-free a{color:var(--gold-bright);font-weight:600}
+.tariffs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.tariffs.t2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px;margin-inline:auto}
+@media (max-width:980px){.tariffs,.tariffs.t2{grid-template-columns:1fr;max-width:560px}}
+.plan{padding:40px 36px;display:flex;flex-direction:column}
+.plan.feat{border-color:var(--gold);background:linear-gradient(180deg,rgba(217,164,65,.15),var(--surface) 62%);box-shadow:var(--shadow),0 0 0 1px rgba(217,164,65,.25);transform:translateY(-12px)}
+.plan.feat:hover{transform:translateY(-16px)}
+@media (max-width:980px){.plan.feat,.plan.feat:hover{transform:none}}
+.plan .ribbon{position:absolute;top:18px;right:18px;font:600 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#1A1204;background:linear-gradient(180deg,var(--gold-bright),var(--gold));border-radius:100px;padding:7px 13px;white-space:nowrap}
+.plan .tag{font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.plan.feat .tag{color:var(--gold)}
+.plan .price{font:700 clamp(42px,3vw,56px)/1 var(--serif);margin:20px 0 0;letter-spacing:-.02em}
+.plan .price .cur{font-size:.42em;color:var(--muted);margin-left:8px;letter-spacing:0}
+.plan .per{font-size:14.5px;color:var(--muted);margin:12px 0 26px;line-height:1.5}
+.plan .per .save{color:var(--profit)}
+.plan .alt-pay{display:block;font:500 13px/1.4 var(--mono);color:var(--faint);margin-top:6px}
+.plan ul{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-direction:column;gap:12px;flex:1}
+.plan li{font-size:15px;padding-left:28px;position:relative;line-height:1.5}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--profit);font-weight:700}
+.plan .btn{width:100%}
+.incl{margin:52px auto 0;text-align:center;color:var(--muted);font-size:15.5px;line-height:1.85;max-width:1000px}
+.incl b{color:var(--text);font-weight:600}
+.incl a{color:var(--gold-bright)}
+.incl .gift{display:inline-block;margin-top:12px;color:var(--text)}
+.incl .gift b{color:var(--gold-bright)}
+.pay{display:flex;align-items:center;justify-content:center;gap:12px 26px;flex-wrap:wrap;margin-top:26px;font-size:14px;color:var(--muted)}
+.pay span{display:inline-flex;align-items:center;gap:8px}
+.pay svg{width:18px;height:18px;color:var(--gold)}
+.pt-lead{max-width:900px;margin:0 auto 40px;text-align:center;font-size:16px;line-height:1.7;color:var(--muted);background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:18px;padding:18px 26px}
+.pt-lead b{color:var(--text)}
+
+
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:clamp(40px,6vw,120px);align-items:start}
+@media (max-width:1000px){.faq-grid{grid-template-columns:1fr}}
+.faq-side{position:sticky;top:120px}
+.faq-side .sec-head{margin-bottom:28px}
+.faq-side .btn{margin-top:6px}
+.faq{display:flex;flex-direction:column;gap:12px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 26px;transition:border-color .25s,background .25s}
+details[open]{border-color:var(--gold-line);background:linear-gradient(180deg,rgba(217,164,65,.05),var(--surface))}
+summary{cursor:pointer;list-style:none;padding:24px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:26px;font-weight:300;transition:transform .3s var(--ease);flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details .a{padding:0 0 24px;color:var(--muted);font-size:16px;line-height:1.7}
+details .a a{color:var(--gold)}
+
+
+.final{text-align:center;background:radial-gradient(60% 90% at 50% 0%,rgba(217,164,65,.17),transparent 65%);border-top:1px solid var(--line);overflow:hidden}
+.final h2{font-size:clamp(32px,3.2vw,64px);max-width:18ch;margin:24px auto 0;line-height:1.08;letter-spacing:-.025em}
+.final p{color:var(--muted);max-width:60ch;margin:28px auto 40px;font-size:clamp(17px,1.3vw,20px)}
+.final .cta-row{justify-content:center}
+.final .fq{margin:64px auto 0;max-width:820px;font:italic 500 clamp(18px,1.3vw,22px)/1.5 var(--serif);color:var(--text)}
+.final .fq cite{display:block;margin-top:12px;font:500 12.5px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-style:normal}
+footer{border-top:1px solid var(--line);padding:64px 0 42px;color:var(--faint);font-size:14px;background:var(--ink-2)}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+@media (max-width:900px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
+.foot h4{margin:0 0 16px;font:500 12px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.foot a{display:block;color:var(--muted);margin:0 0 10px;transition:color .2s}
+.foot a:hover{color:var(--gold)}
+.foot a.brand{display:flex;margin-bottom:18px;color:var(--text)}
+.foot p{margin:0;line-height:1.65;max-width:46ch}
+.foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;padding-top:24px;border-top:1px solid var(--line);font-size:13px}
+
+
+.mdl{position:fixed;inset:0;z-index:120;background:rgba(4,7,12,.84);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto}
+.mdl[hidden]{display:none}
+.mdl-card{position:relative;width:min(900px,100%);max-height:calc(100vh - 40px);overflow:auto;background:linear-gradient(180deg,rgba(217,164,65,.09),var(--surface) 45%);border:1px solid var(--gold-line);border-radius:26px;padding:clamp(26px,4vw,48px);box-shadow:0 50px 140px rgba(0,0,0,.65);animation:mdlIn .4s var(--ease)}
+@keyframes mdlIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.mdl-x{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:13px;border:1px solid var(--line-2);background:var(--surface-2);color:var(--text);font-size:17px;cursor:pointer}
+.mdl-card h3{font-size:clamp(28px,3vw,40px);line-height:1.1;margin:16px 0 12px}
+.mdl-lead{color:var(--muted);font-size:16.5px;margin:0 0 24px;line-height:1.65}
+.mdl-ben{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.mdl-ben div{background:rgba(8,12,20,.55);border:1px solid var(--line);border-radius:15px;padding:15px 17px}
+.mdl-ben b{display:block;font-size:14.5px;margin-bottom:4px}
+.mdl-ben span{font-size:13.5px;color:var(--muted);line-height:1.5}
+.mdl-steps{margin:0 0 26px;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:15.5px;color:var(--muted)}
+.mdl-steps b{color:var(--text)}
+.mdl-cta{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.mdl-ben{grid-template-columns:1fr}.mdl-cta .btn,.m-cta .btn{width:100%}.mdl-cta .btn small,.m-cta .btn small{display:none}}
+.lb{position:fixed;inset:0;z-index:130;background:rgba(4,7,12,.94);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:3vw;cursor:zoom-out}
+.lb.in{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:14px;box-shadow:0 40px 110px rgba(0,0,0,.7);border:1px solid var(--line-2)}
+.lb button{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:13px;border:1px solid var(--line-2);background:var(--surface);color:var(--text);font-size:20px;cursor:pointer}
+
+@media (min-width:2200px){body{font-size:18px}.hero-text{max-width:920px}.sec-head{max-width:1100px}.sec-head.center p{max-width:900px}.txt h3{font-size:clamp(28px,1.8vw,46px)}}
+@media (max-width:560px){.stat .n{font-size:26px}.stat{padding:28px 18px}.cta-row .btn{width:100%;white-space:normal}.cta-row .btn small{display:none}.pill{white-space:normal;text-align:left}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1!important;transform:none!important;transition:none}.float,.marquee-track,.scroll-cue::after{animation:none}.hero-shot .frame{transform:none!important}.card:hover,.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Trading Guru"><img src="../img/logo.png" alt="" width="40" height="40"><span class="wordmark">TRADING <span>GURU</span></span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#path">How it works</a><a href="#screens">Features</a><a href="#wisdom">Rules of the greats</a><a href="#who">Who it's for</a><a href="#mentors">Mentors</a><a href="#tariffs">Pricing</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><a href="../" data-lang="ru" class="" lang="ru">RU</a><a href="./" data-lang="en" class="on" lang="en">EN</a></div>
+      <a class="btn btn-gold btn-sm" href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl>Download free</a>
+    </div>
+  </div>
+</header>
+<div class="lang-bar" id="lang-bar" hidden><div>Есть версия на русском. <a href="../" data-lang="ru">Перейти →</a><button type="button" aria-label="Close" data-lb-x>✕</button></div></div>
+
+<div class="hero" id="top">
+  <canvas id="chart" aria-hidden="true"></canvas>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-veil"></div>
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <div class="pill reveal"><span class="tag">New</span><span><b>English version</b>, <b>MetaTrader</b> import and <b>your first review in 5 minutes</b></span></div>
+      <h1 class="title reveal d1">Discipline beats the <span class="gold">entry&nbsp;point</span></h1>
+      <p class="sub reveal d2">Traders don't lose money on bad entries — they lose it on broken rules: a moved stop, one trade too many, the urge to win it back after a loss. Trading Guru keeps the discipline with you: risk and rules before the entry, an honest review after the trade, and a journal that shows what every broken rule costs.</p>
+      <div class="cta-row reveal d3">
+        <a class="btn btn-gold" href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>Download for Windows <small>7 days free</small></a>
+        <a class="btn btn-ghost" href="#path">How it works</a>
+      </div>
+      <div class="under reveal d4"><span>No sign-up, no card</span><span>Every feature for 7 days</span><span>Your trades stay on your PC</span></div>
+    </div>
+    <div class="hero-shot reveal d2" id="heroShot">
+      <div class="float f1"><span>Simulator · trade</span><b style="color:var(--profit)">+2.00R</b><span>take in 7 bars</span></div>
+      <div class="float f2"><span>By the rules / with violations</span><b><span style="color:var(--profit)">+25 $</span> <span style="color:var(--faint);font-size:14px">vs</span> <span style="color:var(--loss)">−38 $</span></b><span>average per trade</span></div>
+      <div class="float f3"><span>Cost of “Revenge after a stop”</span><b style="color:var(--loss)">−761 $</b><span>10 times in 2 months</span></div>
+      <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Trading Guru · Bar-by-bar simulator</span></div>
+        <img src="../img/en/new-sim.jpg" alt="Bar-by-bar simulator: real history, hidden dates, a trade with stop and take" width="2630" height="1734" fetchpriority="high"></div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#pain" aria-label="Scroll down"></a>
+</div>
+
+<div class="marquee" aria-label="Works with"><div class="marquee-track">
+  <span><em>Works with</em></span><span>Binance</span><span>Bybit</span><span>OKX</span><span>BitGet</span><span>MetaTrader 4</span><span>MetaTrader 5</span><span>Moscow Exchange</span><span>Telegram</span><span>Gemini · Claude</span><span>Windows 10 / 11</span>
+  <span aria-hidden="true"><em>Works with</em></span><span aria-hidden="true">Binance</span><span aria-hidden="true">Bybit</span><span aria-hidden="true">OKX</span><span aria-hidden="true">BitGet</span><span aria-hidden="true">MetaTrader 4</span><span aria-hidden="true">MetaTrader 5</span><span aria-hidden="true">Moscow Exchange</span><span aria-hidden="true">Telegram</span><span aria-hidden="true">Gemini · Claude</span><span aria-hidden="true">Windows 10 / 11</span>
+</div></div>
+<div class="wrap"><div class="stats">
+  <div class="stat reveal"><div class="n gold">8 steps</div><div class="l">trading-system wizard with a check at every step</div></div>
+  <div class="stat reveal d1"><div class="n gold">1000 bars</div><div class="l">of real history in every simulator session</div></div>
+  <div class="stat reveal d2"><div class="n gold">30 seconds</div><div class="l">to review a trade after it closes — just buttons</div></div>
+  <div class="stat reveal d3"><div class="n gold">4 groups</div><div class="l">of trades: by the rules or not, in profit or in loss</div></div>
+  <div class="stat reveal d4"><div class="n gold">24/7</div><div class="l">Telegram bot: statistics, alerts and trade reviews</div></div>
+</div></div>
+
+<div class="bigquote"><div class="wrap reveal">
+  <blockquote>Rule No. 1: Never lose money. Rule No. 2: Never forget Rule No. 1.</blockquote>
+  <cite>Warren Buffett<span>investor, chairman of Berkshire Hathaway</span></cite>
+</div></div>
+
+
+<section id="pain" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">01</span> Sound familiar?</div>
+      <h2>Plenty of trades. No <span class="gold">clue</span> why you're losing</h2>
+      <p>Most traders go in circles not because “the method doesn't work”, but because they can't see what exactly they're doing wrong.</p>
+    </div>
+    <div class="pains">
+      <div class="card pain reveal d1"><div class="q">“Hit a stop — so the method is bad”</div><p>A week later you can't remember where you entered or why you left. The verdict is ready: change the method and add indicators. <b>The circle starts again.</b></p></div>
+      <div class="card pain reveal d2"><div class="q">“A green month — I'm doing great”</div><p>Inside, one method made money and another ate half of it. The total is green, so <b>you keep trading the second method.</b></p></div>
+      <div class="card pain reveal d3"><div class="q">“Raised my risk after a stop and won it back”</div><p>The money came back — so you did it right? No. That was luck. <b>Next time, with that risk, it may not come back.</b></p></div>
+    </div>
+    <div class="bridge reveal">Trading Guru closes the loop: <em>system → validation → honest review → correction</em>. Every trade becomes material for growth.</div>
+  </div>
+</section>
+
+
+<section id="path">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">02</span> The trader's path</div>
+      <h2>Five steps from “trading by feel” to a <span class="gold">working system</span></h2>
+      <p>All in one app — no more stitching together spreadsheets, trainers and calculators from different places.</p>
+    </div>
+    <div class="path">
+      <div class="st reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></div><div class="k">STEP 01</div><h3>Build a system</h3><p>The wizard walks you through 8 steps: style, idea, filters, entry, stop, exit, risk.</p><a href="#s-wizard">System wizard →</a></div>
+      <div class="st reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15V9M12 15V7M16 15v-4"/></svg></div><div class="k">STEP 02</div><h3>Practice on history</h3><p>30 trades in the bar-by-bar simulator — the future is hidden, and so are the dates.</p><a href="#s-sim">Simulator →</a></div>
+      <div class="st reveal d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></div><div class="k">STEP 03</div><h3>Calculate the risk</h3><p>Position size, R:R and liquidation price before the entry, plus your system's checklist.</p><a href="#all">Calculator →</a></div>
+      <div class="st reveal d4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></div><div class="k">STEP 04</div><h3>Write it down while you remember</h3><p>The trade closed — 30 seconds: method, by plan or not, mistakes, emotion.</p><a href="#s-review">Trade review →</a></div>
+      <div class="st reveal d5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6"/></svg></div><div class="k">STEP 05</div><h3>Find the leaks</h3><p>Which method eats your profit, what each mistake costs, where the drawdowns are.</p><a href="#s-matrix">Analytics →</a></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="day" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">03</span> One trading day</div>
+      <h2>By your side <span class="gold">at every stage</span> — from the morning to the weekly review</h2>
+      <p>Discipline is made of small things that are easy to skip. Trading Guru reminds you of them at the right moment — and stays out of the way while you're in a trade.</p>
+    </div>
+    <div class="day">
+      <div class="card dd reveal d1"><div class="t"><i></i>MORNING</div><h3>Readiness</h3><p>Half a minute of honest answers: sleep, rush, emotions, clarity of the plan.</p><ul><li>state score and focus of the day</li><li>which days are actually more profitable for you</li></ul></div>
+      <div class="card dd reveal d2"><div class="t"><i></i>BEFORE THE ENTRY</div><h3>Risk and checklist</h3><p>Where's the stop? The app tells you what size to enter with so the loss stays within limits.</p><ul><li>size from risk, R:R, liquidation</li><li>your system's checklist</li></ul></div>
+      <div class="card dd reveal d3"><div class="t"><i></i>IN THE TRADE</div><h3>Position control</h3><p>Live open positions from the exchange, hints on breakeven and leverage, price alerts.</p><ul><li>software stop and breakeven</li><li>stop day and a pause after a loss</li></ul></div>
+      <div class="card dd reveal d4"><div class="t"><i></i>AFTER THE EXIT</div><h3>Write it down</h3><p>30 seconds of buttons: method, by plan or not, mistakes, emotion. Or right in Telegram.</p><ul><li>trades are imported from the exchange</li><li>your analysis screenshot attached</li></ul></div>
+      <div class="card dd reveal d5"><div class="t"><i></i>EVENING & WEEK</div><h3>Review and a task</h3><p>The day's result and a weekly review in Telegram: what feeds you, what eats you, the costliest mistake.</p><ul><li>one task for the week</li><li>rewards for discipline</li></ul></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="screens">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">04</span> Inside the app</div>
+      <h2>Real working screens, not <span class="gold">pretty mock-ups</span></h2>
+      <p>This is what Trading Guru looks like inside. Click any screenshot to see it full size.</p>
+    </div>
+
+    <div class="row first reveal" id="s-wizard">
+      <div class="media">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Trading-system wizard</span></div><img src="../img/en/new-wizard.jpg" alt="Trading-system wizard: a step with mentor hints and a check" loading="lazy"></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>System passport</span></div><img src="../img/en/new-passport.jpg" alt="Trading-system passport: validation stages, rules, plan vs. actual" loading="lazy"></div>
+      </div>
+      <div class="txt"><div class="k">Trading-system wizard</div>
+        <h3>No system of your own? Let's build one together — in 8 steps</h3>
+        <p>As if a mentor were sitting next to you: at every step it explains why it matters, shows the common mistake and checks that you've put it together properly.</p>
+        <ul>
+          <li><b>Won't let you skip</b> <span>without a stop, without an idea, or with entry conditions you can't see on a chart</span></li>
+          <li><b>Will warn you</b> <span>“3% risk — a streak of 10 stops will cost 26% of the account”</span></li>
+          <li><b>System passport</b> <span>rules, expectancy, plan vs. actual, the main mistake</span></li>
+          <li><b>Validation stages</b> <span>idea → 30 simulator trades → 20 trades at small risk → working</span></li>
+          <li><b>Plugs in by itself</b> <span>journal method, pre-trade checklist and risk limits</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row flip reveal" id="s-sim">
+      <div class="media"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Bar-by-bar simulator</span></div><img src="../img/en/new-sim.jpg" alt="Simulator: real history, an open trade, stop and take" loading="lazy"></div></div>
+      <div class="txt"><div class="k">Bar-by-bar simulator</div>
+        <h3>Test your method on history without knowing the future</h3>
+        <p>The app takes a random piece of real history and hides the dates. You move the chart candle by candle and enter at market, with a limit or a stop order — just like a terminal, only without risk.</p>
+        <ul>
+          <li><b>Real candles</b> <span>BTC, ETH, SOL and more — from 5 minutes to 4 hours, with a higher-timeframe window</span></li>
+          <li><b>Honest execution</b> <span>if a bar hits both stop and take, it counts as a stop; gaps fill at the open</span></li>
+          <li><b>Catches mistakes itself</b> <span>moved your stop — it logs “Moved the stop”</span></li>
+          <li><b>Practice journal</b> <span>win rate, expectancy in R and a verdict for each method</span></li>
+        </ul>
+        <div class="quote-in">“Saw the future? Skip this section” — one button and you're in front of new history.</div>
+      </div>
+    </div>
+
+    <div class="row reveal" id="s-review">
+      <div class="media">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Journal · trades</span></div><img src="../img/en/new-journal.jpg" alt="Journal: a trade with method, “by plan” mark, emotion and mistakes" loading="lazy"></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Write it down while you remember</span></div><img src="../img/en/new-review.jpg" alt="Quick review right after a trade closes" loading="lazy"></div>
+      </div>
+      <div class="txt"><div class="k">A journal in 30 seconds</div>
+        <h3>The trade closed — write it down while you remember</h3>
+        <p>Trades come in from the exchange or MetaTrader by themselves, and a review takes half a minute: everything is buttons, no essays. That's why the journal actually gets kept instead of gathering dust.</p>
+        <ul>
+          <li><b>Method, by plan, mistakes, emotion</b> <span>separately — and everything can be filtered by them</span></li>
+          <li><b>A nudge after the close</b> <span>one per trade, can be turned off</span></li>
+          <li><b>“Not reviewed this week: 5”</b> <span>and a button to go through them one by one</span></li>
+          <li><b>Analysis screenshot per trade</b> <span>plus a comment: thoughts and reasons for mistakes</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row flip reveal" id="s-matrix">
+      <div class="media"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Analytics · Rules × result</span></div><img src="../img/en/new-matrix.jpg" alt="Rules × result: proper profit, proper stop, dangerous profit, deserved loss" loading="lazy"></div></div>
+      <div class="txt"><div class="k">Rules × result</div>
+        <h3>Judge a trade by how it was made, not just by the money</h3>
+        <p>A stop by plan is a normal trade. A profit with broken rules is a dangerous one: it reinforces a habit that will one day blow the account.</p>
+        <ul>
+          <li><b>4 groups</b> <span>proper profit, proper stop, dangerous profit, deserved loss</span></li>
+          <li><b>Compared in money</b> <span>what an average trade earns by the rules vs. with violations</span></li>
+          <li><b>Click a group</b> <span>— and see all its trades in the journal</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row reveal">
+      <div class="media">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Analytics · Breakdown by method</span></div><img src="../img/en/new-methods.jpg" alt="Breakdown by method: which method earns and which eats the profit" loading="lazy"></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span>Analytics · Cost of mistakes</span></div><img src="../img/en/new-mistakes.jpg" alt="Cost of mistakes: how much money each mistake took" loading="lazy"></div>
+      </div>
+      <div class="txt"><div class="k">Methods and the cost of mistakes</div>
+        <h3>Which method feeds you, which eats you — and what each mistake costs</h3>
+        <p>A green month often hides a method that drags you down. The app says it plainly: “False breakout ate −307 $ — without it the total would be +1 325 $”.</p>
+        <ul>
+          <li><b>Win rate, expectancy and a verdict</b> <span>“scale up” or “cut” for every method</span></li>
+          <li><b>The price of each mistake in money</b> <span>“Revenge after a stop” — how often and how much</span></li>
+          <li><b>Emotion → result</b> <span>the states in which you earn and the ones in which you lose</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row flip reveal">
+      <div class="media"><div class="frame"><div class="bar"><i></i><i></i><i></i><span>Analytics · Equity curve</span></div><img src="../img/en/new-equity.jpg" alt="Equity curve with highlighted drawdowns" loading="lazy"></div></div>
+      <div class="txt"><div class="k">Drawdowns and stagnation</div>
+        <h3>The app finds where you were losing — and why</h3>
+        <p>Drawdowns and flat periods are highlighted right on the curve. Click a section and see what was going on there. And after your first import — a “first review” in 5 minutes: the result, the main leak and your strength.</p>
+        <ul>
+          <li><b>Win rate in the section vs. usual</b> <span>— 37% instead of 42%</span></li>
+          <li><b>How many trades broke the rules</b> <span>and which mistakes repeated most</span></li>
+          <li><b>The main takeaway</b> <span>“Start with ‘Revenge after a stop’”</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="demo-note">Screenshots are taken in the app on demo data.</p>
+  </div>
+</section>
+
+
+<section id="wisdom" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">05</span> Rules of the greats</div>
+      <h2>The great traders all say the same thing. <span class="gold">The app helps you do it</span></h2>
+      <p>Discipline, cutting losses, honesty with yourself — these aren't new ideas. What's new is that you can now not just know them, but follow them every day.</p>
+    </div>
+    <div class="wisdom">
+      <div class="card wis reveal d1"><blockquote>“The elements of good trading are: cutting losses, cutting losses, and cutting losses.”</blockquote>
+        <div class="who"><div class="av">ES</div><div><b>Ed Seykota</b><span>trader, featured in “Market Wizards”</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> the stop and position size are calculated before the entry, and moving the stop is logged as a mistake.</div></div>
+      <div class="card wis reveal d2"><blockquote>“The investor's chief problem — and even his worst enemy — is likely to be himself.”</blockquote>
+        <div class="who"><div class="av">BG</div><div><b>Benjamin Graham</b><span>author of “The Intelligent Investor”</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> pre-session readiness, anti-tilt and “emotion → result” show when the enemy is you.</div></div>
+      <div class="card wis reveal d3"><blockquote>“It's not whether you're right or wrong that's important, but how much money you make when you're right and how much you lose when you're wrong.”</blockquote>
+        <div class="who"><div class="av">GS</div><div><b>George Soros</b><span>investor</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> average win vs. average loss, R:R and expectancy for every method.</div></div>
+      <div class="card wis reveal d1"><blockquote>“Don't focus on making money; focus on protecting what you have.”</blockquote>
+        <div class="who"><div class="av">PJ</div><div><b>Paul Tudor Jones</b><span>hedge-fund manager</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> a daily limit, stop day, a pause after a loss and the prop tracker keep the deposit safe.</div></div>
+      <div class="card wis reveal d2"><blockquote>“The market is never wrong — opinions often are.”</blockquote>
+        <div class="who"><div class="av">JL</div><div><b>Jesse Livermore</b><span>legendary speculator</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> the simulator on real history tests your opinion with facts — before you risk any money.</div></div>
+      <div class="card wis reveal d3"><blockquote>“Discipline is the bridge between goals and accomplishment.”</blockquote>
+        <div class="who"><div class="av">JR</div><div><b>Jim Rohn</b><span>entrepreneur and author</span></div></div>
+        <div class="tg"><b>In Trading Guru:</b> checklists, daily habits, streaks and rewards turn rules into a daily practice.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="who">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">06</span> Who it's for</div>
+      <h2>For any trader <span class="gold">who wants to grow</span></h2>
+      <p>Beginner, experienced trader, prop trader or mentor — each has their own job to do. The app covers every one of them.</p>
+    </div>
+    <div class="who-grid">
+      <div class="card who-c reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M7 10.5V15c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></div>
+        <h3>Beginners</h3><p class="pain2">No system, trading “by feel”, scared to risk real money.</p>
+        <ul><li>the wizard builds a system in 8 steps</li><li>the simulator — practice without money</li><li>a decision trainer and an exam</li></ul>
+        <div class="res"><b>Result:</b> a working system validated by facts, not hope.</div></div>
+      <div class="card who-c reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Active traders</h3><p class="pain2">Lots of trades, but no idea where the money leaks.</p>
+        <ul><li>import from exchanges and MetaTrader</li><li>the price of every mistake in money</li><li>which method, hour and instrument lose</li></ul>
+        <div class="res"><b>Result:</b> you see what to cut and what to scale.</div></div>
+      <div class="card who-c reveal d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Prop traders</h3><p class="pain2">One extra trade and the challenge is gone.</p>
+        <ul><li>prop tracker: buffer to limits and drawdown</li><li>stop day and anti-tilt</li><li>consistency and progress to target</li></ul>
+        <div class="res"><b>Result:</b> the firm's rules under control every day.</div></div>
+      <div class="card who-c reveal d4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 010 7M18.5 14.8c1.6.8 2.7 2.6 3 5.2"/></svg></div>
+        <h3>Mentors & schools</h3><p class="pain2">Students send screenshots, but there's no real picture.</p>
+        <ul><li>every student's real trading</li><li>reviews on the chart, assignments, chats</li><li>20% of purchases with your code</li></ul>
+        <div class="res"><b>Result:</b> you lead the group by facts, not by stories.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="all" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">07</span> And there's more</div>
+      <h2>A dozen tools — <span class="gold">in one window</span></h2>
+      <p>Everything that used to be scattered across spreadsheets, calculators and browser tabs.</p>
+    </div>
+    <div class="bento">
+      <div class="card tile t-a reveal"><div class="no">Risk</div><h3>Risk and liquidation calculator</h3><p>Position size from your risk, R:R, breakeven and fees. Liquidation price for any leverage — and a warning if the stop sits beyond it. Stocks, futures, crypto, forex.</p><img src="../img/en/new-calc.jpg" alt="Risk and liquidation calculator" loading="lazy"></div>
+      <div class="card tile t-b reveal d1"><div class="no">Market</div><h3>Crypto radar and anomaly scanner</h3><p>All perpetual futures at once: funding, open interest, volume. It highlights coins behaving unusually right now.</p><img src="../img/en/new-radar.jpg" alt="Crypto radar: anomaly scanner" loading="lazy"></div>
+      <div class="card tile t-c reveal"><div class="no">AI</div><h3>AI mentor and chart review</h3><p>Reviews your trades using your own statistics. Send a chart screenshot — it points out the trend, levels and a logical entry. Gemini (free) or Claude.</p></div>
+      <div class="card tile t-d reveal d1"><div class="no">Discipline</div><h3>Readiness, checklists, anti-tilt</h3><p>A state check before the session, a pre-entry ritual, a stop day and a pause after a losing streak.</p></div>
+      <div class="card tile t-e reveal d2"><div class="no">Positions</div><h3>Live positions and auto-stop</h3><p>Open positions from the exchange in real time, distance to liquidation, a software stop and breakeven.</p></div>
+      <div class="card tile t-f reveal"><div class="no">Time</div><h3>When you're in profit and when you lose</h3><p>A “weekday × hour” heatmap, breakdown by hour, duration and instrument.</p><img src="../img/en/new-heatmap.jpg" alt="Profit heatmap by day and hour" loading="lazy"></div>
+      <div class="card tile t-g reveal d1"><div class="no">Connected</div><h3>Exchange import and Telegram bot</h3><p>Trades are pulled from Binance, Bybit, OKX, BitGet. The 24/7 bot sends statistics, alerts and questions about a closed trade: answer with buttons and it lands in the journal.</p>
+        <div class="bubbles" aria-label="Bot message examples"><span>📊 Day result: 3 trades, win rate 67%</span><span>🔔 Price reached your alert</span><span>📝 BTCUSDT +120 $ — by plan?</span></div></div>
+      <div class="card tile t-h reveal"><div class="no">MetaTrader</div><h3>MT4 and MT5 import</h3><p>Save the account history report in the terminal and choose it in the journal. Re-importing creates no duplicates.</p></div>
+      <div class="card tile t-i reveal d1"><div class="no">5 minutes</div><h3>A first review right after import</h3><p>The result, the main money leak and your strength — no setup, no waiting.</p></div>
+      <div class="card tile t-j reveal d2"><div class="no">Language</div><h3>English and Russian</h3><p>Interface, hints, AI and the coach's voice — in your language. Switch it in settings.</p></div>
+    </div>
+    <div class="chips reveal">
+      <span>Prop tracker</span><span>Trade replay</span><span>Share a trade as an image</span><span>Trader summary card</span><span>Setup playbook</span><span>Leak detector</span><span>MFE / MAE</span><span>Economic calendar</span><span>Multiple accounts</span><span>Privacy mode</span><span>Decision trainer and exam</span><span>Two-PC sync</span>
+    </div>
+  </div>
+</section>
+
+
+<section id="mentors">
+  <div class="wrap">
+    <div class="mentor reveal">
+      <div>
+        <div class="eyebrow"><span class="no">08</span> Mentors & schools</div>
+        <h2>Your own mentor cabinet — <span class="gold">in two minutes</span></h2>
+        <p>Students trade and review their trades in Trading Guru, and you see their real trading, their trading systems and simulator practice, set assignments and review mistakes right on the chart. Every mentor sees only their own students.</p>
+        <div class="m-cta">
+          <button type="button" class="btn btn-gold" data-mstart>Become a mentor <small>7 days free</small></button>
+          <a class="btn btn-ghost" href="#tariffs" data-pt="mentor">Mentor pricing</a>
+        </div>
+        <p class="m-how">The cabinet opens inside the app — so you see your students' trading straight from their journals, not from screenshots. All you need is an email and a password, no card.</p>
+      </div>
+      <div class="mlist">
+        <div class="mi"><b>Students' trading</b><span>Trades, daily and period results, mistakes and rule violations.</span></div>
+        <div class="mi"><b>Review on the chart</b><span>Your markup and comment on the student's trade.</span></div>
+        <div class="mi"><b>System and simulator</b><span>Where the student's system stands, plan vs. actual, practice on history.</span></div>
+        <div class="mi"><b>Assignments and chats</b><span>Homework, private and group chats, topic groups, walkie-talkie.</span></div>
+        <div class="mi"><b>Connect with a code</b><span>The student enters your code — no extra accounts or sign-ups.</span></div>
+        <div class="mi"><b>Student keys included</b><span>Student doesn't have the app? You issue a key yourself: full version while your plan is active.</span></div>
+        <div class="mi"><b>20% income</b><span>From every purchase of the app with your code — graduates, followers.</span></div>
+        <div class="mi"><b>Your brand</b><span>Students see your school's name in the app and in chats.</span></div>
+      </div>
+    </div>
+    <div class="steps m-steps">
+      <div class="card step reveal d1"><div class="k">01</div><h3>Create a cabinet</h3><p>Sign up right in the app. A trial opens immediately: 7 days and up to 3 students.</p></div>
+      <div class="card step reveal d2"><div class="k">02</div><h3>Invite students</h3><p>Those who already have Trading Guru get your mentor code. Those who don't get a key right from the cabinet: a message with the key and instructions is copied in one click.</p></div>
+      <div class="card step reveal d3"><div class="k">03</div><h3>Lead the group</h3><p>Who's trading today, where they break the rules, which mistakes cost the most — visible without calls or spreadsheets.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="compare" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">09</span> Comparison</div>
+      <h2>Why not a spreadsheet or a <span class="gold">typical online journal</span></h2>
+      <p>A spreadsheet doesn't calculate anything by itself. Online journals are powerful, but they're only a journal — no system builder, no simulator, no discipline tools.</p>
+    </div>
+    <div class="cmp reveal">
+      <div class="cmp-row cmp-head"><div>What matters</div><div class="us">Trading Guru</div><div>Typical online journal</div><div>Excel / Google Sheets</div></div>
+      <div class="cmp-row"><div>Payment</div><div class="us"><span class="cy">✓</span>One-time for 6 or 12 months in USDT, no auto-renewal</div><div><span class="cp">~</span>Monthly subscription, often $20–50/mo</div><div><span class="cy">✓</span>Free</div></div>
+      <div class="cmp-row"><div>Language and markets</div><div class="us"><span class="cy">✓</span>English and Russian · crypto, MetaTrader, Moscow Exchange</div><div><span class="cp">~</span>Usually English only, varies by market</div><div><span class="cp">~</span>Whatever you build</div></div>
+      <div class="cmp-row"><div>Where trades are stored</div><div class="us"><span class="cy">✓</span>On your computer</div><div><span class="cp">~</span>On their servers</div><div><span class="cy">✓</span>With you</div></div>
+      <div class="cmp-row"><div>Trade import</div><div class="us"><span class="cy">✓</span>Binance, Bybit, OKX, BitGet, MT4/MT5</div><div><span class="cy">✓</span>Many brokers</div><div><span class="cn">✕</span>All by hand</div></div>
+      <div class="cmp-row"><div>Mistakes and methods in money</div><div class="us"><span class="cy">✓</span>Yes, plus “Rules × result”</div><div><span class="cy">✓</span>Tags and reports</div><div><span class="cn">✕</span>Only if you build it</div></div>
+      <div class="cmp-row"><div>Simulator on history</div><div class="us"><span class="cy">✓</span>Built in, dates hidden</div><div><span class="cp">~</span>Not everywhere</div><div><span class="cn">✕</span>No</div></div>
+      <div class="cmp-row"><div>Help building a system</div><div class="us"><span class="cy">✓</span>System wizard with checks</div><div><span class="cp">~</span>Setup templates</div><div><span class="cn">✕</span>No</div></div>
+      <div class="cmp-row"><div>Risk calculator, liquidation, stop day</div><div class="us"><span class="cy">✓</span>Built in</div><div><span class="cn">✕</span>Usually not</div><div><span class="cn">✕</span>No</div></div>
+      <div class="cmp-row"><div>Review a trade from your phone</div><div class="us"><span class="cy">✓</span>Buttons in Telegram, lands in the journal</div><div><span class="cp">~</span>In a mobile app, if there is one</div><div><span class="cn">✕</span>No</div></div>
+    </div>
+    <p class="cmp-note">Compared with typical services of their class. Specific products differ.</p>
+  </div>
+</section>
+
+
+<section id="tariffs">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow"><span class="no">10</span> Pricing</div>
+      <h2>Try first, <span class="gold">pay later</span></h2>
+      <p>Pay once for the period you choose — no auto-renewals, no subscription traps. The longer the period, the better the price.</p>
+    </div>
+    <div class="seg-wrap reveal">
+      <div class="seg" role="tablist" aria-label="Who the plan is for">
+        <button type="button" role="tab" class="on" aria-selected="true" aria-controls="pt-me" data-pt="me">For myself</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="pt-mentor" data-pt="mentor">Mentors<span class="seg-x"> &amp; schools</span></button>
+        <i class="seg-glider" aria-hidden="true"></i>
+      </div>
+      <div class="seg-note" id="seg-note">You're a trader and trade yourself — this is for you. One key, the whole app.</div>
+    </div>
+
+    <div class="pt" id="pt-me" role="tabpanel">
+      <div class="t-free reveal"><span>🎁 First, <b>7 days free</b> — every feature, no card, no sign-up.</span><a href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl>Download free →</a></div>
+      <div class="tariffs t2">
+        <div class="card plan reveal d1"><div class="tag">6 months</div>
+          
+          <div class="price">59<span class="cur">USDT</span></div><div class="per">≈ 9.8 USDT per month</div>
+          <ul><li>Full access for half a year</li><li>All updates and new features</li><li>To test it in real trading</li><li>1 key = 1 computer (can be reset)</li></ul>
+          <a class="btn btn-ghost" href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener" data-buy="half">Buy 6 months</a></div>
+        <div class="card plan feat reveal"><div class="ribbon">★ Best value</div><div class="tag">1 year</div>
+          
+          <div class="price">99<span class="cur">USDT</span></div><div class="per">≈ 8.25 USDT per month · <span class="save">16% cheaper than 6 months</span></div>
+          <ul><li>Full access for 12 months</li><li>All updates and new features</li><li>For those who trade regularly</li><li>1 key = 1 computer (can be reset)</li></ul>
+          <a class="btn btn-gold" href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener" data-buy="year">Buy 1 year</a></div>
+      </div>
+      <div class="pay reveal"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><path d="M8 9h8M12 9v7"/></svg>Payment in USDT</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3L2 11l7 3 3 7z"/><path d="M9 14l5-5"/></svg>Key delivered in Telegram, usually within an hour</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>No auto-renewal</span></div>
+      <div class="incl reveal">Every plan includes: <b>trading-system wizard</b> · <b>bar-by-bar simulator</b> · <b>journal with mistake and method review</b> · <b>“Rules × result”</b> · <b>risk calculator with liquidation</b> · <b>crypto radar</b> · <b>AI mentor</b> · <b>exchange and MetaTrader import</b> · <b>Telegram bot</b> · <b>all updates</b><br><span class="gift">🎁 <b>10% off</b> with a friend's or mentor's code: a friend who already has Trading Guru or your mentor gives it to you. Once you buy, you get your own code: friends get −10%, you get <b>10% of their purchases</b>.</span></div>
+    </div>
+
+    <div class="pt" id="pt-mentor" role="tabpanel" hidden>
+      <div class="pt-lead"><b>These plans are for those who teach students.</b> To trade yourself, you don't need a mentor cabinet — that's the “For myself” plan. Students don't need to buy anything: the plan includes the stated number of students — you issue each one a key and they have the full version while your plan is active.</div>
+      <div class="tariffs">
+        <div class="card plan"><div class="tag">Mentor</div>
+          
+          <div class="price">35<span class="cur">USDT</span></div><div class="per">per month · up to 10 students</div>
+          <ul><li>Or 350 USDT a year — 2 months free</li><li>A personal mentor or a small group</li><li>Cabinet, invite code, student keys</li><li>Chart reviews, assignments, chats</li></ul>
+          <button type="button" class="btn btn-ghost" data-mstart>Start free</button></div>
+        <div class="card plan feat"><div class="ribbon">★ For active groups</div><div class="tag">Pro</div>
+          
+          <div class="price">79<span class="cur">USDT</span></div><div class="per">per month · up to 30 students</div>
+          <ul><li>Or 790 USDT a year — 2 months free</li><li>Several cohorts in separate chats</li><li>Everything in “Mentor”</li><li>Students with your keys get the full version</li></ul>
+          <button type="button" class="btn btn-gold" data-mstart>Start free</button></div>
+        <div class="card plan"><div class="tag">School</div>
+          
+          <div class="price">199<span class="cur">USDT</span></div><div class="per">per month · up to 100 students</div>
+          <ul><li>Or 1 990 USDT a year — 2 months free</li><li>For schools with cohorts and groups</li><li>Everything in “Pro”</li><li>Keys for 100 students</li></ul>
+          <button type="button" class="btn btn-ghost" data-mstart>Start free</button></div>
+      </div>
+      <div class="incl">Already have a cabinet? <a href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener" data-buy="mentor">Activate a plan in Telegram</a> — we turn it on within a day.<br>Start free: <b>7 days and up to 3 students</b> — sign up right in the app (Settings → “Mentor cabinet”). If a student bought the app themselves, their access <b>doesn't depend on your plan</b>.<br><span class="gift">🤝 Partner program: your code gives 10% off the app, and you get <b>20% of every purchase</b> made with it.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section id="start" class="alt">
+  <div class="wrap">
+    <div class="sec-head center reveal"><div class="eyebrow"><span class="no">11</span> Getting started</div><h2>Three steps — and you trade <span class="gold">by the rules</span></h2></div>
+    <div class="steps">
+      <div class="card step reveal d1"><div class="k">01</div><h3>Download and install</h3><p>A regular Windows 10/11 app, an ~80 MB installer. The button leads to the download page.</p></div>
+      <div class="card step reveal d2"><div class="k">02</div><h3>7 days free</h3><p>Every feature is open. Build a system in the wizard, trade it in the simulator, connect an exchange or MetaTrader to the journal.</p></div>
+      <div class="card step reveal d3"><div class="k">03</div><h3>Get your key</h3><p>Like it? Message us in Telegram, pay and get a key. Enter it in the app and the full version unlocks.</p></div>
+    </div>
+    <div class="t-free reveal" style="margin-top:34px;max-width:980px"><span><b>Windows may show a blue SmartScreen window</b> — the installer doesn't have a paid code signature yet, that's normal. Click “More info” → “Run anyway”.</span></div>
+  </div>
+</section>
+
+
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side reveal">
+      <div class="sec-head"><div class="eyebrow"><span class="no">12</span> FAQ</div><h2>The short <span class="gold">answers</span></h2><p>Didn't find your answer? Message me — I answer personally.</p></div>
+      <a class="btn btn-ghost" href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener">Ask in Telegram</a>
+    </div>
+    <div class="faq">
+      <details class="reveal"><summary>Is it really free for 7 days?</summary><div class="a">Yes. Download, install and use every feature for 7 days without limits — no card, no sign-up. Like it — choose 6 months or a year. Don't — just uninstall.</div></details>
+      <details class="reveal"><summary>How do I pay?</summary><div class="a">Message <a href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener">@TradingGuru_pro</a> in Telegram — I'll send the payment details. We accept USDT. After payment you get a key: enter it in the app (Settings → “License and activation”) and the full version unlocks. No subscriptions, no auto-renewals.</div></details>
+      <details class="reveal"><summary>I'm a beginner without a system. Will the app help?</summary><div class="a">Yes — that's exactly what the trading-system wizard is for. It walks you through 8 steps, explains why each one matters and won't let you skip the important parts, like the stop or filters. Then you test the system in the simulator on history, not with your own money.</div></details>
+      <details class="reveal"><summary>What is the bar-by-bar simulator?</summary><div class="a">The app takes a random piece of real history and hides the dates so you don't know what comes next. You move the chart candle by candle and make decisions as in real trading. Trades close at the stop and take by themselves and go into a practice journal — separate from the real one.</div></details>
+      <details class="reveal"><summary>Which exchanges and terminals are supported?</summary><div class="a">Trade import via API (read-only): Binance, Bybit, OKX, BitGet, plus MEXC for spot. MetaTrader 4 and 5 — via the account history report (HTML). The risk calculator handles Moscow Exchange stocks and futures, currencies, crypto and forex. Trades from other venues can be added manually.</div></details>
+      <details class="reveal"><summary>Which devices? Do I need the internet?</summary><div class="a">A desktop app for Windows 10/11. For full use you need the internet: charts and quotes, trade import, the simulator, the Telegram bot and mentor connection. Without the internet the journal, risk calculator and checklists still open — you add trades manually then. The trades themselves are stored on your computer.</div></details>
+      <details class="reveal"><summary>Are my trades and exchange keys safe?</summary><div class="a">Your data is stored on your computer. Exchange keys are used only to read history and positions and never leave the app. No accounts are required. The app may send anonymous usage statistics — a random install number and which steps were completed, no trades, keys or names; you can turn it off in settings.</div></details>
+      <details class="reveal"><summary>Is the app available in English?</summary><div class="a">Yes. The interface, hints, trainer, guide, AI reviews and the coach's voice are available in English and Russian. The language follows your system and can be changed in Settings → “View” → “Language”.</div></details>
+      <details class="reveal"><summary>Windows warns me during installation — is that dangerous?</summary><div class="a">No. The installer doesn't have a paid code signature yet, so SmartScreen shows a warning. Click “More info” → “Run anyway”.</div></details>
+      <details class="reveal"><summary>I'm a mentor or a school. How do I connect students?</summary><div class="a">Install the app and open Settings → “Mentor cabinet” → “Become a mentor”. 7 days and up to 3 students are free. Students who have the app connect with your code; those who don't, with a key you issue them in the cabinet (included in the plan). Every mentor sees only their own students.</div></details>
+      <details class="reveal"><summary>What happens to students when the mentor's plan ends?</summary><div class="a">Students who got keys from a mentor have access while the mentor's plan is active. When the mentor renews, the students' access renews by itself. When training ends, a student can buy the app with 10% off using the mentor's code or become a mentor. The journal and all data stay with the student either way.</div></details>
+      <details class="reveal"><summary>Are there discounts?</summary><div class="a">Yes. 10% off with a friend's or mentor's code. A friend who already has Trading Guru (it's under the 🎁 icon at the top of the app) or your mentor gives it to you. Enter it when buying: “Buy the full version” → “Have a friend's code?”. After you buy, you get your own code: friends get a discount and you get 10% of their purchases.</div></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <div class="eyebrow">Start today</div>
+    <h2>Every trade is <span class="gold">material for growth</span></h2>
+    <p>Build a system, test it on history and start seeing exactly where the money goes. A week for free — nothing to lose.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl>Download Trading Guru <small>7 days free</small></a>
+      <a class="btn btn-ghost" href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener">Ask in Telegram</a>
+    </div>
+    <div class="fq">“The consistency you seek is in your mind, not in the markets.”<cite>Mark Douglas · author on trading psychology</cite></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><a class="brand" href="#top"><img src="../img/logo.png" alt="" width="40" height="40"><span class="wordmark">TRADING <span>GURU</span></span></a>
+        <p>A trader's assistant: discipline, risk and an honest review of every trade. Not investment advice. Trading financial markets involves the risk of losing capital.</p></div>
+      <div><h4>Product</h4><a href="#path">How it works</a><a href="#screens">Features</a><a href="#tariffs">Pricing</a><a href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl>Download</a></div>
+      <div><h4>For</h4><a href="#who">Traders</a><a href="#mentors">Mentors & schools</a><a href="#faq">FAQ</a></div>
+      <div><h4>Contact</h4><a href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener">Telegram · @TradingGuru_pro</a><a href="../" data-lang="ru" lang="ru">Русская версия</a><a href="./" data-lang="en" lang="en">English version</a></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Trading Guru</span><span>Made for traders who want to grow</span></div>
+  </div>
+</footer>
+
+<div class="mdl" id="mstart" role="dialog" aria-modal="true" aria-labelledby="mstart-t" hidden>
+  <div class="mdl-card">
+    <button type="button" class="mdl-x" aria-label="Close" data-mclose>✕</button>
+    <div class="eyebrow">Mentor cabinet</div>
+    <h3 id="mstart-t">Lead students by their real trading</h3>
+    <p class="mdl-lead">The cabinet opens inside the Trading Guru app. Students trade and keep their journal — you see their trades, mistakes and rule violations without screenshots or forwarding.</p>
+    <div class="mdl-ben">
+      <div><b>Real trades, not stories</b><span>The student's trades come from the exchange — you see each one, with the result and violations.</span></div>
+      <div><b>Mistakes in money</b><span>What each violation costs for each student — clear what to work on.</span></div>
+      <div><b>Review on the chart</b><span>Your markup and comment right on the student's trade.</span></div>
+      <div><b>Assignments and chats</b><span>Homework, private and group chats, cohort groups — in one place.</span></div>
+      <div><b>20% income</b><span>From every purchase of the app with your code.</span></div>
+      <div><b>Nothing extra for students</b><span>They connect with your code or a key you issue.</span></div>
+    </div>
+    <ol class="mdl-steps">
+      <li><b>Download Trading Guru</b> for Windows and install it — a couple of minutes.</li>
+      <li>Open <b>Settings → “Mentor cabinet” → “Become a mentor”</b>: your name or school name, email and password.</li>
+      <li>Invite students with your code. <b>7 days and up to 3 students are free</b>, no card needed.</li>
+    </ol>
+    <div class="mdl-cta">
+      <a class="btn btn-gold" href="https://github.com/dimidrol987-hash/trading-guru-releases/releases/latest" target="_blank" rel="noopener" data-dl data-mdl-dl>Download and create a cabinet <small>7 days free</small></a>
+      <a class="btn btn-ghost" href="https://t.me/TradingGuru_pro" target="_blank" rel="noopener">Ask in Telegram</a>
+    </div>
+  </div>
+</div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Screenshot"><button type="button" aria-label="Close">✕</button><img alt=""></div>
+
+<script>
+(function(){
+  var LANG='en';
+  var BUY={
+    half:'Hi! I would like to buy Trading Guru for 6 months (59 USDT).',
+    year:'Hi! I would like to buy Trading Guru for 1 year (99 USDT).',
+    mentor:'Hi! I would like to activate a mentor plan in Trading Guru.'
+  };
+  document.querySelectorAll('[data-buy]').forEach(function(a){var m=BUY[a.getAttribute('data-buy')];if(m)a.href='https://t.me/TradingGuru_pro?text='+encodeURIComponent(m);});
+  function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  document.querySelectorAll('[data-lang]').forEach(function(a){a.addEventListener('click',function(){lsSet('tgw_lang',a.getAttribute('data-lang'));var h=location.hash;if(h&&a.href.indexOf('#')<0)a.href=a.href+h;});});
+  var bl=String(navigator.language||'').toLowerCase(),ruB=/^(ru|uk|be|kk)/.test(bl),bar=document.getElementById('lang-bar');
+  if(bar&&!lsGet('tgw_lang')&&!lsGet('tgw_lang_bar')&&((LANG==='ru'&&!ruB&&bl)||(LANG==='en'&&ruB))){bar.hidden=false;
+    bar.querySelector('[data-lb-x]').addEventListener('click',function(){bar.hidden=true;lsSet('tgw_lang_bar','1');});}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  var nav=document.getElementById('nav');function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});});
+  var SB='https://ntzzhcotfmkplgvjxesj.supabase.co',AK='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im50enpoY290Zm1rcGxndmp4ZXNqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM5NTI2MDcsImV4cCI6MjA5OTUyODYwN30.jZVDyu9Aq1AOUb_nZoVMy1MEiPSNHejmradjwoEQPKQ';
+  function vid(){var k=lsGet('tgw_id')||'';if(!k){k='w'+Math.random().toString(36).slice(2)+Date.now().toString(36);lsSet('tgw_id',k);}return k;}
+  function tr(ev,props){try{props=props||{};props.lang=LANG;fetch(SB+'/rest/v1/rpc/track',{method:'POST',keepalive:true,headers:{'Content-Type':'application/json',apikey:AK,Authorization:'Bearer '+AK},
+    body:JSON.stringify({p_install:vid(),p_event:ev,p_ver:'site',p_props:props})}).catch(function(){});}catch(e){}}
+  try{var day=new Date().toISOString().slice(0,10);if(lsGet('tgw_day')!==day){lsSet('tgw_day',day);
+    var ref='';try{ref=document.referrer?new URL(document.referrer).hostname:'';}catch(e){}
+    var q=new URLSearchParams(location.search);tr('web_visit',{ref:ref.slice(0,40),utm:(q.get('utm_source')||'').slice(0,30)});}}catch(e){}
+  document.querySelectorAll('[data-dl]').forEach(function(a){a.addEventListener('click',function(){tr('web_download');});});
+  document.querySelectorAll('[data-buy]').forEach(function(a){a.addEventListener('click',function(){tr('web_buy',{plan:a.getAttribute('data-buy')});});});
+  document.querySelectorAll('[data-pt="mentor"]').forEach(function(b){b.addEventListener('click',function(){tr('web_mentor');});});
+  var md=document.getElementById('mstart'),lastFocus=null;
+  function mOpen(){lastFocus=document.activeElement;md.hidden=false;document.body.style.overflow='hidden';var x=md.querySelector('.mdl-x');if(x)x.focus();tr('web_mentor_open');}
+  function mClose(){if(md.hidden)return;md.hidden=true;document.body.style.overflow='';if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  document.querySelectorAll('[data-mstart]').forEach(function(b){b.addEventListener('click',mOpen);});
+  md.addEventListener('click',function(e){if(e.target===md||e.target.hasAttribute('data-mclose'))mClose();});
+  var dl=md.querySelector('[data-mdl-dl]');if(dl)dl.addEventListener('click',function(){tr('web_mentor_dl');});
+  var seg=document.querySelector('.seg'),note=document.getElementById('seg-note');
+  var NOTES={me:'You\'re a trader and trade yourself — this is for you. One key, the whole app.',mentor:''};
+  function setPt(k){seg.setAttribute('data-on',k);
+    seg.querySelectorAll('button').forEach(function(b){var on=b.getAttribute('data-pt')===k;b.classList.toggle('on',on);b.setAttribute('aria-selected',on?'true':'false');});
+    ['me','mentor'].forEach(function(x){var p=document.getElementById('pt-'+x);p.hidden=x!==k;p.classList.toggle('show',x===k);});
+    note.textContent=NOTES[k];note.hidden=!NOTES[k];}
+  seg.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){setPt(b.getAttribute('data-pt'));});});
+  document.querySelectorAll('a[data-pt]').forEach(function(a){a.addEventListener('click',function(){setPt(a.getAttribute('data-pt'));});});
+  if(/mentor/.test(location.hash))setPt('mentor');
+  var lb=document.getElementById('lb'),lbImg=lb.querySelector('img');
+  function closeLb(){lb.classList.remove('in');lbImg.removeAttribute('src');}
+  document.querySelectorAll('.frame img,.tile img').forEach(function(im){im.addEventListener('click',function(){lbImg.src=im.currentSrc||im.src;lbImg.alt=im.alt;lb.classList.add('in');});});
+  lb.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLb();mClose();}});
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv=document.getElementById('chart');if(!cv)return;
+  var ctx=cv.getContext('2d'),W=0,H=0,dpr=Math.min(2,window.devicePixelRatio||1);
+  var CW=26,candles=[],price=100,scrollX=0,loCur=0,hiCur=1,visible=true;
+  function mk(){var trend=(Math.random()-0.46)*2.3,body=Math.random()*Math.random()*4.6,dir=Math.random()<0.5?1:-1;
+    var o=price,c=price+trend+dir*body,up=Math.max(o,c),dn=Math.min(o,c);
+    var wT=Math.random()<0.3?Math.random()*0.35:Math.random()*Math.random()*3.4,wB=Math.random()<0.3?Math.random()*0.35:Math.random()*Math.random()*3.4;
+    price=c;return{o:o,c:c,h:up+wT,l:dn-wB};}
+  function resize(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=Math.max(1,W*dpr);cv.height=Math.max(1,H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    var need=Math.ceil(W/CW)+3;while(candles.length<need)candles.push(mk());while(candles.length>need)candles.shift();
+    var lo=1e9,hi=-1e9;candles.forEach(function(k){lo=Math.min(lo,k.l);hi=Math.max(hi,k.h);});if(loCur===0&&hiCur===1){loCur=lo;hiCur=hi;}}
+  function draw(){if(!W||!H)return;ctx.clearRect(0,0,W,H);
+    var lo=1e9,hi=-1e9;candles.forEach(function(k){lo=Math.min(lo,k.l);hi=Math.max(hi,k.h);});
+    var pad=(hi-lo)*0.18+1;lo-=pad;hi+=pad;loCur+=(lo-loCur)*0.05;hiCur+=(hi-hiCur)*0.05;
+    var rng=(hiCur-loCur)||1,Y=function(p){return H*0.66-(p-loCur)/rng*H*0.5;};
+    var n=candles.length,baseX=W-(n-1)*CW-CW*0.5-scrollX,bw=Math.min(13,CW*0.54);
+    for(var j=0;j<n;j++){var k=candles[j],cx=baseX+j*CW+CW/2,c=k.c>=k.o?'#4FB286':'#D9685F',newest=(j===n-1);
+      ctx.globalAlpha=newest?1:0.78;ctx.shadowBlur=newest?18:0;ctx.shadowColor='#D9A441';ctx.strokeStyle=c;ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.moveTo(cx,Y(k.h));ctx.lineTo(cx,Y(k.l));ctx.stroke();ctx.fillStyle=c;
+      var top=Math.min(Y(k.o),Y(k.c)),bh=Math.max(1.6,Math.abs(Y(k.c)-Y(k.o)));ctx.fillRect(cx-bw/2,top,bw,bh);}
+    ctx.shadowBlur=0;ctx.globalAlpha=1;
+    var lastY=Y(candles[n-1].c);
+    ctx.strokeStyle='rgba(217,164,65,.4)';ctx.setLineDash([5,6]);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(0,lastY);ctx.lineTo(W,lastY);ctx.stroke();ctx.setLineDash([]);}
+  var last=performance.now();
+  function loop(now){var dt=Math.min(60,now-last);last=now;if(visible){scrollX+=dt*0.022;while(scrollX>=CW){scrollX-=CW;candles.shift();candles.push(mk());}draw();}requestAnimationFrame(loop);}
+  new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(cv);
+  resize();window.addEventListener('resize',resize);
+  if(reduce){draw();}else{requestAnimationFrame(function(n){last=n;requestAnimationFrame(loop);});}
+})();
+</script>
+</body>
+</html>
